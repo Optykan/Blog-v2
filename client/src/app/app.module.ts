@@ -11,6 +11,8 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { CardComponent } from './components/card/card.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { SocialComponent } from './components/social/social.component';
+import { HeroTextComponent } from './pages/home/hero-text/hero-text.component';
+import { ParallaxDirective } from './parallax.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { SocialComponent } from './components/social/social.component';
     BlogComponent,
     CardComponent,
     LogoComponent,
-    SocialComponent
+    SocialComponent,
+    HeroTextComponent,
+    ParallaxDirective
   ],
   imports: [
     BrowserModule,

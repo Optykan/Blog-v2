@@ -1,0 +1,21 @@
+@import '../../../assets/utils';
+
+#component-home {
+	background-image: url('../../../assets/images/low-poly-texture-5.png');
+	background-size: cover cover;
+	background-position: center top;
+	height: 100vh;
+	position: relative;
+	@include gradient-dim();
+	@include flex-center;
+	#blog-button {
+		position: absolute;
+		right: 2rem;
+		top: 2rem;
+	}
+	#home-component-social {
+		position: absolute;
+		bottom: 2rem;
+		right: 2rem;
+	}
+}

@@ -1,5 +1,6 @@
 <ul class="component-social">
 	<li *ngFor="let link of links;">
 		<a href="{{link.url}}" class="social-link">{{link.title}}</a>
+		<ng-content></ng-content>
 	</li>
 </ul>

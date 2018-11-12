@@ -1,0 +1,12 @@
+@import "../../../../assets/utils";
+
+.hero-text-component{
+	text-align: center;
+	color: palette(black, 100);
+	.hero-text-separator {
+		border-radius: 1rem;
+		border-width: 2px;
+		width: 5rem;
+		border-color: palette(black, 100);
+	}	
+}

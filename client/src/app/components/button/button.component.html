@@ -1,4 +1,4 @@
-<button class="component-button btn btn-primary">
-	<a href="{{link}}">{{text}}</a>
+<button class="component-button" [class.rounded]="rounded">
+	<a href="{{link}}" *ngIf="link">{{text}}</a>
 	<ng-content></ng-content>
 </button>
