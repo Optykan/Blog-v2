@@ -13,6 +13,8 @@ import { LogoComponent } from './components/logo/logo.component';
 import { SocialComponent } from './components/social/social.component';
 import { HeroTextComponent } from './pages/home/hero-text/hero-text.component';
 import { ParallaxDirective } from './parallax.directive';
+import { PostPreviewComponent } from './pages/blog/post-preview/post-preview.component';
+import { BlogHeaderComponent } from './pages/blog/blog-header/blog-header.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ParallaxDirective } from './parallax.directive';
     LogoComponent,
     SocialComponent,
     HeroTextComponent,
-    ParallaxDirective
+    ParallaxDirective,
+    PostPreviewComponent,
+    BlogHeaderComponent
   ],
   imports: [
     BrowserModule,

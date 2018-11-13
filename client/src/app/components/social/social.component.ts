@@ -12,13 +12,14 @@ export class SocialComponent implements OnInit {
     constructor() {
         this.links = [
             {title: 'Github', url: 'https://github.com/Optykan'}, 
-            {title: 'LinkedIn', url: 'https://linkedin.com/in/Optykan'}
+            {title: 'LinkedIn', url: 'https://linkedin.com/in/Optykan'},
+            {title: 'Resume', url: '/assets/misc/[Release]%20Resume.pdf'},
+            {title: 'Email', url: 'mailto:hello@syang.ca'}
         ]
     }
 
     ngOnInit() {
     }
-
 }
 
 interface Link {

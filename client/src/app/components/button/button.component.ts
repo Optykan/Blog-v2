@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'component-button',
@@ -6,11 +8,16 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
-  constructor() {
+  constructor(private router: Router, private location: Location) {
 
   }
 
   ngOnInit() {
+  }
+
+  click(){
+    // this.router.navigate([this.link]);
+    this.location.replaceState(this.link);
   }
   
   @Input() link: string;

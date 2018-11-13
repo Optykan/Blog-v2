@@ -9,7 +9,6 @@ var helmet = require('helmet');
 
 var fs = require('fs');
 var api = require('./routes/api');
-var admin = require('./routes/admin');
 
 var app = express();
 

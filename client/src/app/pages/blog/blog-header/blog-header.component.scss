@@ -1,0 +1,32 @@
+@import '../../../../assets/utils';
+
+#blog-header{
+	padding: 15rem 8rem;
+	position: relative;
+	.blog-title{
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+	.blog-separator{
+		@include black-separator;
+		width: 10rem;
+		margin-top: 0.5rem;
+		margin-bottom: 1rem;
+	}
+	.blog-header-content{
+		// margin-left: 6rem;
+	}
+	.blog-subheader{
+		// color: palette(primary, 500);
+	}
+	.component-logo{
+		position: absolute;
+		top: 3rem;
+		left: 1rem;
+	}
+	.home-button{
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+}

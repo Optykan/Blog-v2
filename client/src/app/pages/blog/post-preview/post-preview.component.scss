@@ -1,0 +1,47 @@
+@import '../../../../assets/utils';
+
+.post-preview{
+	// display:flex;
+	.post-number{
+		color: palette(primary, 500);
+		margin-bottom: 0;
+		position:relative;
+		&::before{
+			content: '/';
+			position:absolute;
+	    left: -5px;
+	    top: 5.5px;
+	    font-size: 28px;
+		}
+		/*&::after{
+			content: '/';
+			position:absolute;
+	    left: 0px;
+	    top: 5.5px;
+	    font-size: 28px;
+		}*/
+	}
+	.post-title{
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+	.post-left{
+		.post-content{
+			padding: 5rem 0;
+		}
+		.post-snippet{
+			margin: 1rem 0;
+		}
+	}
+	.post-right{
+		background-size: cover; 
+		background-position: center;
+		clip-path: ellipse(100% 175vh at 110% 0%);
+	}
+	&.reverse{
+		flex-direction: row-reverse;
+		.post-right{
+			clip-path: ellipse(100% 175vh at -10% 0%);		
+		}
+	}
+}

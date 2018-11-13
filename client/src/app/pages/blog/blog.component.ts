@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from './../../services/post.service';
+import { PostPreview } from './../../blog.interface';
 
 @Component({
   selector: 'app-blog',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
+	postService: PostService;
+	posts: Array<PostPreview>;
 
-  constructor() { }
+  constructor(posts: PostService) {
+  	this.postService = posts;
+  }
 
   ngOnInit() {
+  	
   }
 
 }
