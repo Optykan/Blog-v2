@@ -9,14 +9,17 @@ import { PostPreview } from './../../blog.interface';
 })
 export class BlogComponent implements OnInit {
 	postService: PostService;
-	posts: Array<PostPreview>;
+	posts: Map<String, PostPreview>;
+  Object: Object = Object;
 
   constructor(posts: PostService) {
   	this.postService = posts;
   }
 
-  ngOnInit() {
-  	
+  async ngOnInit() {
+  	(await this.postService._get('/posts')).subscribe((data:any)=>{
+      this.posts = data.response;
+      console.log(this.posts)
+    });
   }
-
 }
