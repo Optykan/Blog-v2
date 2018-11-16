@@ -2,8 +2,8 @@
 
 #component-home {
 	background-image: url('../../../assets/images/low-poly-texture-5.png');
-	background-size: cover cover;
-	background-position: center top;
+	background-size: cover;
+	background-position: left top;
 	height: 100vh;
 	position: relative;
 	@include gradient-dim();

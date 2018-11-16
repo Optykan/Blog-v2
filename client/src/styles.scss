@@ -7,22 +7,15 @@
 @import 'assets/bulma.css';
 
 body {
-	background: palette(black, 100);
+	background: palette(black, 200);
 }
 .loading-spinner{
 	position: fixed;
 	height: 100%;
 	width: 100%;
-	// @include flex-center;
 	.loading-image{
 		width: 10rem;
 		height: 10rem;
 	}
-	-webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-	-moz-animation: fadein 1s; /* Firefox < 16 */
-	-ms-animation: fadein 1s; /* Internet Explorer */
-	-o-animation: fadein 1s; /* Opera < 12.1 */
-	animation: fadein 1s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+	animation: fadein 1s ease-in-out infinite alternate;
 }

@@ -4,17 +4,21 @@ import { Directive, Input, ElementRef, HostListener } from '@angular/core';
   selector: '[appParallax]'
 })
 export class ParallaxDirective {
+  currentTop: number = 0;
+  currentLeft: number = 0;
 
   @Input('ratio') parallaxRatio : number = 1
-  initialTop : number = 0
 
   constructor(private eleRef : ElementRef) {
     //this.initialTop = this.eleRef.nativeElement.getBoundingClientRect().top
   }
 
-  @HostListener("window:scroll", ["$event"])
+  @HostListener("document:mousemove", ["$event"])
   onWindowScroll(event){
-  	let top = (this.initialTop - (window.scrollY * this.parallaxRatio));
-    this.eleRef.nativeElement.style.backgroundPosition = `center ${top}px`;
+  	let top = event.clientY * this.parallaxRatio;
+    let left = event.clientX * this.parallaxRatio;
+    this.currentTop = top;
+    this.currentLeft = left;
+    this.eleRef.nativeElement.style.backgroundPosition = `${left}px ${top}px`;
   }
 }

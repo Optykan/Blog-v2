@@ -11,6 +11,10 @@
 	justify-content: center;
 }
 
+@mixin default-transition($prop){
+	transition: $prop 1s ease;
+}
+
 @mixin dim($amount){
 	&::after{ 
 		height:100%;
