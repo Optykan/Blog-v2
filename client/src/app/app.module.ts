@@ -16,6 +16,7 @@ import { HeroTextComponent } from './pages/home/hero-text/hero-text.component';
 import { ParallaxDirective } from './parallax.directive';
 import { PostPreviewComponent } from './pages/blog/post-preview/post-preview.component';
 import { BlogHeaderComponent } from './pages/blog/blog-header/blog-header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BlogHeaderComponent } from './pages/blog/blog-header/blog-header.compon
     HeroTextComponent,
     ParallaxDirective,
     PostPreviewComponent,
-    BlogHeaderComponent
+    BlogHeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

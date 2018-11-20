@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from './../../services/post.service';
-import { PostPreview } from './../../blog.interface';
+import { Post, PostPreview } from './../../blog.interface';
 
 @Component({
   selector: 'app-blog',
@@ -9,17 +9,41 @@ import { PostPreview } from './../../blog.interface';
 })
 export class BlogComponent implements OnInit {
 	postService: PostService;
-	posts: Map<String, PostPreview>;
+	posts: Array<PostPreview> = [];
   Object: Object = Object;
 
   constructor(posts: PostService) {
   	this.postService = posts;
+    this.posts.push({
+      title: 'tests',
+      snippet: 'snip',
+      link: 'link'
+    })
+    this.posts.push({
+      title: 'tests',
+      snippet: 'snip',
+      link: 'link'
+    })
+  }
+
+  private sliceToPreview(post: Post): PostPreview{
+    return {
+      title: post.title,
+      snippet: post.snippet,
+      link: post.id
+    }
   }
 
   async ngOnInit() {
-  	(await this.postService._get('/posts')).subscribe((data:any)=>{
-      this.posts = data.response;
+  	/*(await this.postService._get('/posts')).subscribe((data:any)=>{
+      let responseMap = data.response;
+      console.log(responseMap)
+      Object.entries(responseMap).forEach((entry:Array<any>)=>{
+        let post : Post = entry[1];
+        console.log(post);
+        this.posts.push(this.sliceToPreview(post));
+      });
       console.log(this.posts)
-    });
+    });*/
   }
 }

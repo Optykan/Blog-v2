@@ -6,6 +6,22 @@
 	li{
 		display: inline-block;
 		margin: 0 1rem;
+		position:relative;
+		&:hover{
+			&::after{
+				width: calc(100% + 4px);
+			}
+		}
+		&::after{
+			content: '';
+			width: 0;
+			position:absolute;
+			height: 2px;
+			background-color: palette(black, 100);
+			bottom: 0;
+			left: -2px;
+			@include default-transition(width, 0.5s);
+		}
 	}
 	.social-link {
 		color: palette(black, 100);		
@@ -14,5 +30,16 @@
 		&::after{
 			content: '.';
 		}
-	}	
+	}
+	&.dark{
+		li::after{
+			background-color: palette(black, 900)
+		}
+		.social-link{
+			color: palette(black, 900);
+		}
+	}
+	&.right{
+		text-align: right;
+	}
 }

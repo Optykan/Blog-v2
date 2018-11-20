@@ -1,4 +1,4 @@
-<ul class="component-social">
+<ul class="component-social" [class.dark]="theme=='black' || theme=='dark'" [class.right]="align=='right'">
 	<li *ngFor="let link of links;">
 		<a href="{{link.url}}" class="social-link">{{link.title}}</a>
 		<ng-content></ng-content>

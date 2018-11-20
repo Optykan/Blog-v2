@@ -11,8 +11,12 @@
 	justify-content: center;
 }
 
-@mixin default-transition($prop){
-	transition: $prop 1s ease;
+@mixin default-transition($prop, $time:1s){
+	transition: $prop $time ease;
+}
+
+@mixin user-transition($prop, $time: 0.5s){
+	transition: $prop $time ease;	
 }
 
 @mixin dim($amount){

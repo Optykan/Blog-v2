@@ -16,7 +16,7 @@ function escapeUnsafe(unsafe){
 }
 
 function makeId(title){
-	title = title.trim();
+	title = title.trim().replace(/:/g, '');
 
 	const maxlength = 50;
 	let id = "";
@@ -40,7 +40,7 @@ router.get('/', function(req, res, next) {
 router.get('/posts', function(req, res, next){
 	var db = admin.database();
 	var ref = db.ref("/posts");
-	ref.on("value", snapshot => {
+	ref.once("value", snapshot => {
 		let response = null;
 		if(snapshot.exists()){
 			response = new Response(Response.STATUS_OK, 'Retrieved all posts successfully', snapshot.val());
@@ -56,7 +56,7 @@ router.get('/posts/:id', function(req, res, next){
 	let ref = db.ref("/posts");
 	let post = ref.child(req.params.id)
 
-	post.on("value", snapshot => {
+	post.once("value", snapshot => {
 		let response = null;
 		if(snapshot.exists()){
 			response = new Response(Response.STATUS_OK, 'Retrieved posts successfully', snapshot.val());
@@ -66,7 +66,6 @@ router.get('/posts/:id', function(req, res, next){
 		response.send(res);
 	})
 });
-
 
 router.post('/posts', function(req, res, next){
 	let response = null;

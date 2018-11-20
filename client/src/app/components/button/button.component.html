@@ -1,4 +1,4 @@
 <button class="component-button" [class.rounded]="rounded">
-	<a href="{{link}}" *ngIf="link" class="link" (click)="click">{{text}}</a>
+	<a href="#" routerLink="{{link}}" *ngIf="link" class="link" (click)="click">{{text}}</a>
 	<ng-content></ng-content>
 </button>

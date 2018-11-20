@@ -1,0 +1,11 @@
+.component-footer{
+	padding-top: 2rem;
+	padding-right: 2rem;
+	padding-left: 2rem;
+	padding-bottom: 1rem;
+	display:flex;
+	align-items: center;
+	.align-right{
+		justify-content: right;
+	}
+}

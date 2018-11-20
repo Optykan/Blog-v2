@@ -6,6 +6,10 @@
 	.blog-title{
 		text-transform: uppercase;
 		font-weight: 700;
+			&::after{
+			content: '.';
+			animation: fadein 0.75s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+		}
 	}
 	.blog-separator{
 		@include black-separator;

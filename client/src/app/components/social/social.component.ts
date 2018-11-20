@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'component-social',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class SocialComponent implements OnInit {
+    @Input() theme: string = "light";
+    @Input() align: string;
 
     links: Array<Link>
     constructor() {
