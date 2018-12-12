@@ -22,3 +22,5 @@ $palette: (
 		100: #dbe1ff
 	)
 );
+
+$default-box-shadow: 2px 2px 5px map-get(map-get($palette, black), 400);

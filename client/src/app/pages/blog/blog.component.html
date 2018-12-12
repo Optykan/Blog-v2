@@ -1,5 +1,3 @@
 <blog-header></blog-header>
-<blog-post-preview [number]="1"></blog-post-preview>
-<blog-post-preview [number]="2" [reverse]=1></blog-post-preview>
 <blog-post-preview *ngFor="let post of posts; let i=index;" [number]="i+1" [post]="post" [reverse]="i%2==1"></blog-post-preview>
 <component-footer></component-footer>

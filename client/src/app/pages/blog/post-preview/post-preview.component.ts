@@ -15,7 +15,7 @@ export class PostPreviewComponent implements OnInit {
   constructor() {
   	this.post = {
   		title: "test",
-  		snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vehicula, est at lacinia ultrices, ante eros volutpat odio, ut mollis turpis ligula nec mi.",
+  		snippet: "Future site of great content",
   		link: "link"
   	}
   }

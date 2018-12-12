@@ -12,15 +12,37 @@
 	a{
 		text-decoration: none;
 		color: palette(black, 900);
-		padding: 0.5rem 1rem;
+		padding: 0.75rem 1.5rem;
 		display: block;
 		@include default-transition(color);
 	}
+
 	&:hover{
 		background-color: pallete(black, 900);
 		border: 1px solid palette(black, 100);
 		a{
 			color: palette(black, 900);
+		}
+	}
+	&.thwhite{
+		background-color: palette(black, 200);
+		border: palette(black, 500);
+		box-shadow: $default-box-shadow;
+		&:hover{
+			box-shadow: 4px 4px 8px map-get(map-get($palette, black), 300);
+		}
+	}
+	&.thblack{
+		background-color: transparent;
+		border-color: palette(black, 200);
+		&:hover{
+			background-color: palette(black, 200);
+			a{
+				color: palette(black, 800);
+			}
+		}
+		a{
+			color: white;
 		}
 	}
 }
