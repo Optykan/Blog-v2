@@ -1,5 +1,9 @@
 @import '../../../assets/utils';
 
+.invert{
+	filter: brightness(0) invert(1);
+}
+
 .logo-container{
 	// background-image: url('/assets/images/favicon.png');
 	// background-size: cover;

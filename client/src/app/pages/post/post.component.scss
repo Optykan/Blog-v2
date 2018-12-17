@@ -1,0 +1,45 @@
+@import "../../../assets/utils";
+
+.component-logo{
+	position: absolute;
+	top: 2rem;
+	left: 1rem;
+	z-index:99;
+}
+.header-content{
+	z-index:99;
+	.title{
+		text-transform: uppercase;
+		text-align: center;
+		margin-bottom: 5rem;
+		color: palette(black, 200);
+	}
+}
+.meta{
+	.count{
+		color: palette(primary, 600);
+		font-weight: bold;
+	}
+	.date{
+		color: palette(primary, 800);
+		text-transform: uppercase;
+	}
+}
+.post-header{
+	background-position: center center;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 60vh;
+	position:relative;
+	@include dim(0.5);
+	border-bottom-left-radius: 200% 25%;
+	border-bottom-right-radius: 200% 25%;
+	&::after{
+		border-bottom-left-radius: 200% 25%;
+		border-bottom-right-radius: 200% 25%;
+	}
+}
+.post-content{
+	margin-top:10rem;
+}
