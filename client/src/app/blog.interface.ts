@@ -8,7 +8,7 @@ export interface Post {
 	title: string;
 	subtitle: string;
 	content: string;
-	date: string;
+	date: number;
 	id: string;
 	image: string;
 	snippet: string;

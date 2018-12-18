@@ -1,18 +1,18 @@
 <section id="post">
 	<component-logo class="component-logo" [invert]=1></component-logo>
-	<div class="post-header" style="background-image: url(https://picsum.photos/1920/1080)">
+	<div class="post-header" [style.background-image]="bypassSanitization(post.image)">
 		<div class="header-content">
-			<h1 class="is-size-1 title">Stack smashing: An introduction</h1>
+			<h1 class="is-size-1 title">{{post.title}}</h1>
 		</div>
 	</div>
 	<div class="container">
 		<div class="columns post-content">
 			<div class="column is-2 is-offset-1 meta">
-				<h1 class="count is-size-1">/01</h1>
-				<h6 class="date is-size-6">{{ post.date | date:'d LLL \'yy' }} </h6>
+				<h1 class="count is-size-1">#01</h1>
+				<h6 class="date is-size-6">{{ post.date | date:'d LLL yyyy' }} </h6>
 			</div>
 			<markdown class="column is-8 post-body" [data]="post.content"></markdown>
 		</div>
 	</div>
 </section>
-<component-footer></component-footer>
+<component-footer></component-footer> 

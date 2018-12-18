@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Post } from '../../blog.interface';
 import { PostService } from '../../services/post.service';
 import { MarkdownService } from 'ngx-markdown';
@@ -12,20 +13,31 @@ export class PostComponent implements OnInit {
 	content: string;
 	post: Post;
 
-  constructor(private postService: PostService, private mdService: MarkdownService) { 
+  constructor(private postService: PostService, private mdService: MarkdownService, private sanitization: DomSanitizer) { 
   	this.post = {
-  		title: '',
+  		title: '...',
   		subtitle: '',
-  		content: '..',
-  		date: '',
+  		content: 'Loading...',
+  		date: 0,
   		id: '',
-  		image: '',
+  		image: 'https://picsum.photos/1000/1080',
   		snippet: ''
   	}
   }
 
-  private markdownRenderHeading(text:string, level:number): string{
-  		return `<h${level} class="is-size-${level}">${text}</h${level}>`
+  private markdownRenderHeading(text:string, level:number): string {
+		// add required bluma css classes
+		return `<h${level} class="is-size-${level}">${text}</h${level}>`
+  }
+
+  bypassSanitization(url){
+  	return this.sanitization.bypassSecurityTrustStyle(`url(${url})`);
+  }
+
+  private conformPost(post: Post): Post{
+  	// post.date = parseInt(post.date as any);
+  	post.date = post.date * 1000 * 60;
+  	return post;
   }
 
   async ngOnInit() {
@@ -33,7 +45,7 @@ export class PostComponent implements OnInit {
 
   	let posts = (await this.postService.getPosts() as any).response;
   	for(let postId in posts){
-  		this.post = posts[postId];
+  		this.post = this.conformPost(posts[postId]);
   		break;
   	}
   	// this.post = posts[Object.keys(posts)[0]];
