@@ -5,21 +5,14 @@
 			<h1 class="is-size-1 title">Stack smashing: An introduction</h1>
 		</div>
 	</div>
-	<div class="columns container post-content">
-		<div class="column is-2 is-offset-2 meta">
-			<h1 class="count is-size-1">/01</h1>
-			<h6 class="date is-size-6">29 Mar 12</h6>
-		</div>
-		<div class="column is-8">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac posuere tortor. Etiam ac augue nisi. Ut vitae lorem finibus, porta tortor ac, consequat turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi auctor tristique maximus. Donec vel diam a velit placerat pretium sed eget tellus. Ut aliquam tortor in mauris laoreet vehicula. Vestibulum felis est, eleifend vitae nunc nec, ultrices accumsan ipsum. Nunc varius elit vulputate, vehicula ex eget, tempus tortor. Aliquam erat volutpat. Praesent nec laoreet velit. Donec ut convallis est. Fusce elit diam, varius ac est dapibus, lobortis suscipit ligula. Suspendisse id vulputate justo. Morbi sagittis sapien quis aliquet faucibus.
-
-			Fusce vel justo metus. Donec aliquam, quam ut dignissim vulputate, erat leo hendrerit leo, non laoreet mauris lacus ac magna. Sed semper lectus eget auctor bibendum. Suspendisse in libero eget diam euismod rutrum quis et tellus. Vestibulum elementum sed dui ut rhoncus. Praesent ipsum odio, aliquam eu tortor id, fermentum iaculis mauris. Nam pellentesque mattis massa, at laoreet nunc tempor at. Suspendisse quis odio vitae libero tempus ullamcorper. Aliquam consequat nisi a diam tincidunt posuere. Etiam congue enim at commodo vulputate. Quisque iaculis tempor enim quis tempus. Quisque bibendum venenatis nisi eu ultricies. Vivamus id augue a lorem interdum dapibus.
-
-			Proin gravida commodo dui quis tempor. Integer nec nisl gravida augue facilisis cursus. Donec tincidunt sodales lectus. Nulla cursus tincidunt ornare. Nullam nec consectetur lorem. Curabitur tempus purus nec elit sollicitudin, quis accumsan lorem rutrum. In tincidunt, mauris quis tempus ornare, ligula dolor posuere elit, id ornare turpis nunc ac lorem. Aenean orci metus, venenatis at convallis et, sollicitudin at nunc. Fusce vel risus enim. Sed libero elit, rutrum ornare vestibulum a, porta vel dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit diam urna, at molestie nulla semper ac.
-
-			Aenean interdum metus tristique, feugiat nibh at, viverra ante. Nullam vitae justo et dolor posuere tristique. Proin semper dignissim sagittis. Cras libero sem, pulvinar eget odio sit amet, auctor dictum nulla. Praesent ut diam odio. Nam eget cursus tortor. Integer commodo neque vitae ligula consectetur mattis. Pellentesque malesuada sapien orci, id dictum dolor ullamcorper sit amet. Etiam ut consectetur justo. Duis hendrerit tortor sapien, sit amet suscipit sapien consequat accumsan.
-
-			Vestibulum sit amet nibh ut nunc rhoncus interdum sed eget ipsum. Nunc pretium maximus porta. Nam feugiat congue euismod. Vivamus eleifend nisi in tincidunt laoreet. In et orci nisi. Maecenas malesuada sodales nibh et ultrices. Mauris et tincidunt metus. Proin eu arcu eget ipsum ullamcorper volutpat. Phasellus blandit nec dolor posuere pharetra. Vestibulum gravida scelerisque lectus posuere dictum. Maecenas varius nunc vitae mauris porta, id lacinia tortor viverra. Nulla molestie neque orci, sed auctor tortor rutrum vel. Donec lacinia lacinia elit ut vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac habitasse platea dictumst.
+	<div class="container">
+		<div class="columns post-content">
+			<div class="column is-2 is-offset-1 meta">
+				<h1 class="count is-size-1">/01</h1>
+				<h6 class="date is-size-6">{{ post.date | date:'d LLL \'yy' }} </h6>
+			</div>
+			<markdown class="column is-8 post-body" [data]="post.content"></markdown>
 		</div>
 	</div>
 </section>
+<component-footer></component-footer>

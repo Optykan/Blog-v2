@@ -19,3 +19,9 @@ body {
 	}
 	animation: fadein 1s ease-in-out infinite alternate;
 }
+markdown *{
+	margin-top: 1rem;
+	&:first-child{
+		margin-top: 0;
+	}
+}

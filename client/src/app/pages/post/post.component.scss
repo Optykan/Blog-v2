@@ -16,12 +16,13 @@
 	}
 }
 .meta{
+	text-align: right;
 	.count{
 		color: palette(primary, 600);
 		font-weight: bold;
 	}
 	.date{
-		color: palette(primary, 800);
+		color: palette(black, 800);
 		text-transform: uppercase;
 	}
 }
@@ -42,4 +43,7 @@
 }
 .post-content{
 	margin-top:10rem;
+	.post-body{
+		padding: 0 5rem;
+	}
 }
