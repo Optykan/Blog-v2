@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'blog-header',
@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog-header.component.scss']
 })
 export class BlogHeaderComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
   }
-
 }

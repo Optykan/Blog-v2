@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../blog.interface';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 const baseUrl: string = "http://localhost:3000/api";
 
 interface Response {
-	body: Map<string, Object>;
+	response: Map<string, Object>;
 	status: string;
 	message: string;
 }
@@ -15,12 +17,16 @@ interface Response {
 })
 export class PostService {
 	async _get(url: string, params?: Object){
-		return await this.http.get(baseUrl+url);
+		return (await this.http.get(baseUrl+url)).pipe(catchError(val=>of({
+			body: null,
+			status: 500,
+			message: "Failed to load."
+		})));
 	}
 
   constructor(private http : HttpClient) { }
 
-  async getPosts(): Promise<Response> {
-  	return (await this._get('/posts')).toPromise() as Promise<Response>;
+  async getPosts(): Promise<Response> { 
+		return (await this._get('/posts')).toPromise() as Promise<Response>;
   }
 }

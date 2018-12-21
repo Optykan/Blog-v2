@@ -7,6 +7,7 @@
 @import 'assets/bulma.css';
 
 body {
+	min-height: 100vh;
 	background: palette(black, 200);
 }
 .loading-spinner{

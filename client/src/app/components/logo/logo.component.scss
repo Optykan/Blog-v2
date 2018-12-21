@@ -4,6 +4,11 @@
 	filter: brightness(0) invert(1);
 }
 
+.logo-wrapper{
+	text-decoration: none;
+	color: palette(black, 900);
+}
+
 .logo-container{
 	// background-image: url('/assets/images/favicon.png');
 	// background-size: cover;

@@ -1,8 +1,10 @@
 @import '../../../../assets/utils';
 
 #blog-header{
-	padding: 15rem 8rem;
 	position: relative;
+	.header-wrapper{
+		margin: 0;
+	}
 	.blog-title{
 		text-transform: uppercase;
 		font-weight: 700;
@@ -18,10 +20,53 @@
 		margin-bottom: 1.5rem;
 	}
 	.blog-header-content{
+		padding: 15rem 0;
 		// margin-left: 6rem;
 	}
 	.blog-subheader{
 		// color: palette(primary, 500);
+	}
+	.blog-wrapper{
+		padding-left: 10rem;
+	}
+	.project-wrapper{
+		margin-left: 1.5rem;
+		padding: 15rem 0rem;
+		padding-right: 10rem;
+		@include user-transition(background);
+		&:hover{
+			cursor: pointer;
+			background: palette(black, 300);
+		}
+		.project-header-content{
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			color: palette(black, 600);
+			.project-title{
+				text-transform: uppercase;
+				font-weight: bold;
+				@include user-transition(all);
+			}
+			.blog-subheader{
+				@include user-transition(all);
+			}
+		}
+		&:hover{
+			.project-header-content{
+				color:palette(black, 800);
+			}
+			.project-separator{
+				@include black-separator;
+			}
+		}
+		.project-separator{
+			@include separator(palette(black, 600));
+			width: 10rem;
+			margin-top: 0.25rem;
+			margin-bottom: 1.5rem;
+			@include user-transition(all);
+		}
 	}
 	.component-logo{
 		position: absolute;

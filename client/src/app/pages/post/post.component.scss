@@ -1,10 +1,17 @@
 @import "../../../assets/utils";
+@import "../../../assets/palette";
 
-.component-logo{
-	position: absolute;
-	top: 2rem;
-	left: 1rem;
+.post-header{
+	position: fixed;
+	top:0;
+	left:0;
 	z-index:99;
+	.component-logo{
+		// position: absolute;
+		margin-top: 2rem;
+		margin-left: 1rem;
+		// z-index:99;
+	}
 }
 .header-content{
 	z-index:99;
@@ -25,8 +32,12 @@
 		color: palette(black, 800);
 		text-transform: uppercase;
 	}
+	.back-button{
+		margin-top: 2rem;
+		display:block;
+	}
 }
-.post-header{
+.post-hero{
 	background-position: center center;
 	display: flex;
 	justify-content: center;
@@ -34,6 +45,7 @@
 	height: 60vh;
 	position:relative;
 	@include dim(0.5);
+	box-shadow: $default-box-shadow;
 	border-bottom-left-radius: 200% 25%;
 	border-bottom-right-radius: 200% 25%;
 	&::after{
@@ -45,5 +57,11 @@
 	margin-top:10rem;
 	.post-body{
 		padding: 0 5rem;
+		margin-bottom: 5rem;
+		&.loading{
+			animation: fadein 0.75s ease-in-out infinite alternate;
+			font-size: 3rem;
+			font-weight: bold;
+		}
 	}
 }

@@ -1,6 +1,8 @@
+<div class="level post-header">
+	<component-logo class="component-logo level-left" [invert]=1></component-logo>
+</div>
 <section id="post">
-	<component-logo class="component-logo" [invert]=1></component-logo>
-	<div class="post-header" [style.background-image]="bypassSanitization(post.image)">
+	<div class="post-hero" [style.background-image]="bypassSanitization(post.image)">
 		<div class="header-content">
 			<h1 class="is-size-1 title">{{post.title}}</h1>
 		</div>
@@ -9,9 +11,10 @@
 		<div class="columns post-content">
 			<div class="column is-2 is-offset-1 meta">
 				<h1 class="count is-size-1">#01</h1>
-				<h6 class="date is-size-6">{{ post.date | date:'d LLL yyyy' }} </h6>
+				<h6 class="date is-size-6">{{ post.date | date:'d LLL yyyy' }}</h6>
+				<component-button link="/blog" text="< back" class="back-button"></component-button>
 			</div>
-			<markdown class="column is-8 post-body" [data]="post.content"></markdown>
+			<markdown class="column is-8 post-body" [class.loading]="loading" [data]="post.content"></markdown>
 		</div>
 	</div>
 </section>

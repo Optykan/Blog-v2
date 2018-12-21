@@ -5,20 +5,20 @@ import { PostService } from '../../services/post.service';
 import { MarkdownService } from 'ngx-markdown';
 
 @Component({
-  selector: 'app-post',
+  selector: 'page-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-	content: string;
+	loading: boolean = true;
 	post: Post;
 
   constructor(private postService: PostService, private mdService: MarkdownService, private sanitization: DomSanitizer) { 
   	this.post = {
   		title: '...',
   		subtitle: '',
-  		content: 'Loading...',
-  		date: 0,
+  		content: '_',
+  		date: Date.now(),
   		id: '',
   		image: 'https://picsum.photos/1000/1080',
   		snippet: ''
@@ -43,7 +43,22 @@ export class PostComponent implements OnInit {
   async ngOnInit() {
   	this.mdService.renderer.heading = this.markdownRenderHeading;
 
-  	let posts = (await this.postService.getPosts() as any).response;
+  	let response = (await this.postService.getPosts() as any);
+    console.log(response);
+    let posts = response.response;
+    this.loading = false;
+    if(!posts){
+      this.post = {
+        title: ':(',
+        subtitle: '',
+        content: response.message,
+        date: Date.now(),
+        id: '',
+        image: 'https://picsum.photos/1000/1080',
+        snippet: ''
+      }
+      return;
+    }
   	for(let postId in posts){
   		this.post = this.conformPost(posts[postId]);
   		break;

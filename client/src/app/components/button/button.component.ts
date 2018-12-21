@@ -22,7 +22,7 @@ export class ButtonComponent implements OnInit {
   
   @Input() link: string;
   @Input() text: string;
-  @Input() rounded: boolean;
-  @Input() thwhite: boolean;
-  @Input() thblack: boolean;
+  @Input() isInverted: boolean;
+  @Input() isOutlined: boolean;
+  @Input() isRounded: boolean;
 }

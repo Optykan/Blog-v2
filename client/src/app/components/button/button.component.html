@@ -1,4 +1,4 @@
-<button class="component-button" [class.rounded]="rounded" [class.thwhite]="thwhite" [class.thblack]="thblack">
+<button class="button is-info" [class.is-inverted]="isInverted" [class.is-outlined]="isOutlined" [class.is-rounded]="isRounded">
 	<a href="#" routerLink="{{link}}" *ngIf="link" class="link" (click)="click">{{text}}</a>
 	<ng-content></ng-content>
 </button>
