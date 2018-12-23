@@ -6,6 +6,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var helmet = require('helmet');
+var Response = require('./routes/Response');
 
 var fs = require('fs');
 var api = require('./routes/api');

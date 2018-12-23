@@ -1,6 +1,7 @@
 export interface PostPreview {
 	title: string;
 	snippet: string;
+	image: string;
 	link: string;
 }
 

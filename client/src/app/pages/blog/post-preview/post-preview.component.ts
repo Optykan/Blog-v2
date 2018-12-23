@@ -16,6 +16,7 @@ export class PostPreviewComponent implements OnInit {
   	this.post = {
   		title: "test",
   		snippet: "Future site of great content",
+      image: "http://picsum.photos/1000",
   		link: "link"
   	}
   }

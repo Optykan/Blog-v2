@@ -20,6 +20,8 @@ class Response{
 		res.setHeader('Content-Type', 'application/json');
 	  res.setHeader("Access-Control-Allow-Origin", "*");
 	  res.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
+	  res.setHeader("Last-Modified", 0);
+
 		res.status(this.status).json({
 			status: this.status,
 			message: this.message,

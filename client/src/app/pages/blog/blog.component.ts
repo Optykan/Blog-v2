@@ -9,41 +9,47 @@ import { Post, PostPreview } from './../../blog.interface';
 })
 export class BlogComponent implements OnInit {
 	postService: PostService;
+  projects: Array<PostPreview> = [];
 	posts: Array<PostPreview> = [];
-  Object: Object = Object;
+  active: Array<PostPreview> = [];
 
   constructor(posts: PostService) {
   	this.postService = posts;
-    this.posts.push({
-      title: 'tests',
-      snippet: 'snip',
-      link: 'link'
-    })
-    this.posts.push({
-      title: 'tests',
-      snippet: 'snip',
-      link: 'link'
-    })
+    this.active = this.posts;
   }
 
   private sliceToPreview(post: Post): PostPreview{
     return {
       title: post.title,
       snippet: post.snippet,
+      image: post.image,
       link: post.id
     }
   }
 
+  switch(e: string){
+    console.log(e);
+    if(e === "projects"){
+      this.active = this.projects;
+    } else {
+      this.active = this.posts;
+    }
+  }
+
   async ngOnInit() {
-  	/*(await this.postService._get('/posts')).subscribe((data:any)=>{
-      let responseMap = data.response;
-      console.log(responseMap)
-      Object.entries(responseMap).forEach((entry:Array<any>)=>{
-        let post : Post = entry[1];
-        console.log(post);
-        this.posts.push(this.sliceToPreview(post));
-      });
-      console.log(this.posts)
-    });*/
+  	let postPromise = (await this.postService.getPosts() as any);
+    let projectPromise = (await this.postService.getProjects() as any);
+    let responses;
+    try{
+      responses = await Promise.all([postPromise, projectPromise]);
+    } catch (e){
+      console.error(e);
+    }
+    console.log(responses[0].response);
+    for(let post in responses[0].response){
+      // console.log(post.content);
+      this.posts.push(this.sliceToPreview(responses[0].response[post]));  
+    }
+    this.projects = responses[1].response.map(project=>this.sliceToPreview(project));
   }
 }

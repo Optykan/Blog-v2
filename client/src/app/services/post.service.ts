@@ -29,4 +29,8 @@ export class PostService {
   async getPosts(): Promise<Response> { 
 		return (await this._get('/posts')).toPromise() as Promise<Response>;
   }
+
+  async getProjects(): Promise<Response> {
+  	return (await this._get('/projects')).toPromise() as Promise<Response>;
+  }
 }
