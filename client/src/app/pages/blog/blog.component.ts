@@ -15,6 +15,18 @@ export class BlogComponent implements OnInit {
 
   constructor(posts: PostService) {
   	this.postService = posts;
+    this.posts.push({
+      title: "test",
+      snippet: "snippet",
+      image: "http://picsum.photos/1000",
+      link: "/test"
+    })
+    this.posts.push({
+      title: "test",
+      snippet: "snippet",
+      image: "http://picsum.photos/1000",
+      link: "/test"
+    })
     this.active = this.posts;
   }
 

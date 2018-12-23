@@ -1,6 +1,9 @@
 @import '../../../../assets/utils';
 
 #blog-header{
+	// border-bottom: 1px solid palette(black, 800);
+	box-shadow: $default-box-shadow;
+	padding-bottom: 12px;
 	position: relative;
 	.header-wrapper{
 		margin: 0;
@@ -45,29 +48,21 @@
 			color: palette(black, 600);
 			text-align: right;
 			padding-left: 5rem;
+			padding-top: 1rem;
 			.project-title{
 				text-transform: uppercase;
 				font-weight: bold;
-				@include user-transition(all);
+				@include user-transition(color);
 			}
-			.blog-subheader{
-				@include user-transition(all);
+			.project-subheader{
+				margin-top: 1rem;
+				@include user-transition(color);
 			}
 		}
 		&:hover{
 			.project-header-content{
 				color:palette(black, 800);
 			}
-			.project-separator{
-				@include black-separator;
-			}
-		}
-		.project-separator{
-			@include separator(palette(black, 600));
-			width: 10rem;
-			margin-top: 0.25rem;
-			margin-bottom: 1.5rem;
-			@include user-transition(all);
 		}
 	}
 	.component-logo{

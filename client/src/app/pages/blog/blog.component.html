@@ -1,3 +1,4 @@
 <blog-header (changeActive)="switch($event)"></blog-header>
+<p class="nothing" *ngIf="active.length == 0">Looks like theres nothing here...</p>
 <blog-post-preview *ngFor="let post of active; let i=index;" [number]="i+1" [post]="post" [reverse]="i%2==1"></blog-post-preview>
 <component-footer></component-footer>

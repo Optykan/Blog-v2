@@ -45,4 +45,7 @@
 			clip-path: ellipse(100% 175vh at -10% 0%);		
 		}
 	}
+	&:last-child{
+		box-shadow: $default-box-shadow;
+	}
 }
