@@ -6,7 +6,19 @@
 	padding-bottom: 12px;
 	position: relative;
 	.header-wrapper{
+		padding-top: 2rem;
+		.component-logo{
+			position: absolute;
+			left: 1rem;
+		}
+		.home-button{
+			position: absolute;
+			right: 2rem;
+		}
+	}
+	.hero-wrapper{
 		margin: 0;
+		margin-top: -2rem;
 	}
 	.blog-title{
 		text-transform: uppercase;
@@ -64,15 +76,5 @@
 				color:palette(black, 800);
 			}
 		}
-	}
-	.component-logo{
-		position: absolute;
-		top: 2rem;
-		left: 1rem;
-	}
-	.home-button{
-		position: absolute;
-		top: 2rem;
-		right: 2rem;
 	}
 }

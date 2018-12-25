@@ -2,18 +2,23 @@
 @import "../../../assets/palette";
 
 .post-header{
-	position: fixed;
-	top:0;
+	position: absolute;
+	top: 2rem;
 	left:0;
 	z-index:99;
+	display: flex;
+	width: 100%;
 	.component-logo{
 		// position: absolute;
-		margin-top: 2rem;
 		margin-left: 1rem;
 		// z-index:99;
 	}
-}
-.header-content{
+	.home-button{
+		margin-left: auto;
+		margin-right: 2rem;
+	}
+} 
+.hero-content{
 	z-index:99;
 	.title{
 		text-transform: uppercase;
@@ -24,6 +29,7 @@
 }
 .meta{
 	text-align: right;
+	margin-bottom: 5rem;
 	.count{
 		color: palette(primary, 600);
 		font-weight: bold;
@@ -55,6 +61,7 @@
 }
 .post-content{
 	margin-top:10rem;
+	box-shadow: $default-box-shadow;
 	.post-body{
 		padding: 0 5rem;
 		margin-bottom: 5rem;

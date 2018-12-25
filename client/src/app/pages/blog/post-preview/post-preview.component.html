@@ -4,7 +4,7 @@
 			<h1 class="post-number is-size-3">/{{paddedNumber}}.</h1>
 			<h1 class="post-title is-size-3">{{post.title}}.</h1>
 			<p class="post-snippet">{{post.snippet}}</p>
-			<component-button class="read-more" link="/post" text='Read More'></component-button>
+			<component-button class="read-more" link="/post/{{post.link}}" text='Read More'></component-button>
 		</div>
 		<div class="column is-4" *ngIf="reverse"></div>
 	</div>

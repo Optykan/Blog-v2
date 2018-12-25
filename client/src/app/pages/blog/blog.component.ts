@@ -15,18 +15,18 @@ export class BlogComponent implements OnInit {
 
   constructor(posts: PostService) {
   	this.postService = posts;
-    this.posts.push({
-      title: "test",
-      snippet: "snippet",
-      image: "http://picsum.photos/1000",
-      link: "/test"
-    })
-    this.posts.push({
-      title: "test",
-      snippet: "snippet",
-      image: "http://picsum.photos/1000",
-      link: "/test"
-    })
+    // this.posts.push({
+    //   title: "test",
+    //   snippet: "snippet",
+    //   image: "http://picsum.photos/1000",
+    //   link: "/test"
+    // })
+    // this.posts.push({
+    //   title: "test",
+    //   snippet: "snippet",
+    //   image: "http://picsum.photos/1000",
+    //   link: "/test"
+    // })
     this.active = this.posts;
   }
 
@@ -39,9 +39,8 @@ export class BlogComponent implements OnInit {
     }
   }
 
-  switch(e: string){
-    console.log(e);
-    if(e === "projects"){
+  switch(current: string){
+    if(current === "projects"){
       this.active = this.projects;
     } else {
       this.active = this.posts;
@@ -49,6 +48,7 @@ export class BlogComponent implements OnInit {
   }
 
   async ngOnInit() {
+
   	let postPromise = (await this.postService.getPosts() as any);
     let projectPromise = (await this.postService.getProjects() as any);
     let responses;

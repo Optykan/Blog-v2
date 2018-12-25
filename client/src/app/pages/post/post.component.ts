@@ -3,6 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Post } from '../../blog.interface';
 import { PostService } from '../../services/post.service';
 import { MarkdownService } from 'ngx-markdown';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'page-post',
@@ -12,8 +13,9 @@ import { MarkdownService } from 'ngx-markdown';
 export class PostComponent implements OnInit {
 	loading: boolean = true;
 	post: Post;
+  id: string;
 
-  constructor(private postService: PostService, private mdService: MarkdownService, private sanitization: DomSanitizer) { 
+  constructor(private postService: PostService, private mdService: MarkdownService, private sanitization: DomSanitizer, private route: ActivatedRoute) { 
   	this.post = {
   		title: '...',
   		subtitle: '',
@@ -40,29 +42,29 @@ export class PostComponent implements OnInit {
   	return post;
   }
 
-  async ngOnInit() {
-  	this.mdService.renderer.heading = this.markdownRenderHeading;
+  ngOnInit() {
+    this.route.params.subscribe(async params => {
+      this.id = params['id'];
 
-  	let response = (await this.postService.getPosts() as any);
-    console.log(response);
-    let posts = response.response;
-    this.loading = false;
-    if(!posts){
-      this.post = {
-        title: ':(',
-        subtitle: '',
-        content: response.message,
-        date: Date.now(),
-        id: '',
-        image: 'https://picsum.photos/1000/1080',
-        snippet: ''
+    	let response = (await this.postService.getPost(this.id) as any);
+      let post = response.response;
+      this.loading = false;
+      if(!post){
+        this.post = {
+          title: ':(',
+          subtitle: '',
+          content: response.message,
+          date: Date.now(),
+          id: '',
+          image: 'https://picsum.photos/1000/1080',
+          snippet: ''
+        }
+      } else {
+    		this.post = this.conformPost(post);
       }
-      return;
-    }
-  	for(let postId in posts){
-  		this.post = this.conformPost(posts[postId]);
-  		break;
-  	}
+    });
+
+    this.mdService.renderer.heading = this.markdownRenderHeading;
   	// this.post = posts[Object.keys(posts)[0]];
   }
 

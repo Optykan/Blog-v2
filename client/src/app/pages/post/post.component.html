@@ -1,9 +1,10 @@
-<div class="level post-header">
-	<component-logo class="component-logo level-left" [invert]=1></component-logo>
+<div class="post-header">
+	<component-logo class="component-logo" [invert]=1></component-logo>
+	<component-button class="home-button" link="/home" text="Home"></component-button>
 </div>
 <section id="post">
 	<div class="post-hero" [style.background-image]="bypassSanitization(post.image)">
-		<div class="header-content">
+		<div class="hero-content">
 			<h1 class="is-size-1 title">{{post.title}}</h1>
 		</div>
 	</div>

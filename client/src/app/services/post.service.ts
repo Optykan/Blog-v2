@@ -18,6 +18,7 @@ interface Response {
 export class PostService {
 	async _get(url: string, params?: Object){
 		return (await this.http.get(baseUrl+url)).pipe(catchError(val=>of({
+			//handle observer errors
 			body: null,
 			status: 500,
 			message: "Failed to load."
@@ -32,5 +33,9 @@ export class PostService {
 
   async getProjects(): Promise<Response> {
   	return (await this._get('/projects')).toPromise() as Promise<Response>;
+  }
+
+  async getPost(id: number): Promise<Response>{
+  	return (await this._get(`/posts/${id}`)).toPromise() as Promise<Response>;
   }
 }
