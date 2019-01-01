@@ -35,7 +35,7 @@ export class PostService {
   	return (await this._get('/projects')).toPromise() as Promise<Response>;
   }
 
-  async getPost(id: number): Promise<Response>{
+  async getPost(id: string): Promise<Response>{
   	return (await this._get(`/posts/${id}`)).toPromise() as Promise<Response>;
   }
 }

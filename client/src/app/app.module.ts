@@ -21,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { PostComponent } from './pages/post/post.component';
 import { ProjectHeaderComponent } from './pages/projects/project-header/project-header.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ProjectHeaderComponent } from './pages/projects/project-header/project-
     ProjectsComponent,
     PostComponent,
     ProjectHeaderComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,

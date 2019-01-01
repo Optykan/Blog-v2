@@ -1,8 +1,8 @@
 <div class="columns post-preview is-gapless" [class.reverse]="reverse">
-	<div class="column is-5 post-left columns">
+	<div class="column is-5 post-left columns" style="background-image: url('https://picsum.photos/1000')">
 		<div class="column post-content" [ngClass]="{ 'is-offset-4': !reverse }">
 			<h1 class="post-number is-size-3">/{{paddedNumber}}.</h1>
-			<h1 class="post-title is-size-3">{{post.title}}.</h1>
+			<h3 class="post-title is-size-3">{{post.title}}.</h3>
 			<p class="post-snippet">{{post.snippet}}</p>
 			<component-button class="read-more" link="/post/{{post.link}}" text='Read More'></component-button>
 		</div>

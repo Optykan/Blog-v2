@@ -45,10 +45,18 @@
 		padding-left: 10rem;
 	}
 	.project-wrapper{
+		//it says project but I really meant right side
 		margin-left: 1.5rem;
-		padding: 15rem 0rem;
+		padding-top: 15rem;
+		padding-bottom: 15rem;
+		padding-left: 0rem;
 		padding-right: 10rem;
 		@include user-transition(background);
+		@include until($tablet){
+			margin-left: 0;
+			padding: 5rem;
+			border-top: 1px solid palette(black, 400);
+		}
 		&:hover{
 			cursor: pointer;
 			background: palette(black, 300);
@@ -61,10 +69,21 @@
 			text-align: right;
 			padding-left: 5rem;
 			padding-top: 1rem;
+			@include until($tablet){
+				// padding-left: 5rem; 
+				align-items: flex-start;
+			}
 			.project-title{
 				text-transform: uppercase;
 				font-weight: bold;
 				@include user-transition(color);
+				@include until($tablet){
+					&::after{
+						content: '>';
+						margin-left: 1rem;
+						animation: fadein 1s alternate infinite;
+					}
+				}
 			}
 			.project-subheader{
 				margin-top: 1rem;

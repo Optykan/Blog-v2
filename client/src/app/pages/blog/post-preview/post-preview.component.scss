@@ -5,6 +5,9 @@
 	background: palette(black, 100);
 	.post-number{
 		color: palette(primary, 500);
+		@include until($tablet){ 
+			color: palette(black, 100); 
+		}
 		margin-bottom: 0;
 		position:relative;
 		&::before{
@@ -25,24 +28,52 @@
 	.post-title{
 		text-transform: uppercase;
 		font-weight: 700;
+		@include until($tablet){
+			color: palette(black, 100);
+		}
 	}
 	.post-left{
+		position: relative;
+		@include from($tablet){
+			background-image: none !important; 
+		}
+		@include until($tablet){
+			@include dim(0.5);
+		}
 		.post-content{
-			padding: 5rem 0;
+			position: relative;
+			z-index: 99;
+			padding: 5rem;
+			@include from($tablet){
+				padding: 5rem 0;
+			}
 		}
 		.post-snippet{
 			margin: 1rem 0;
+			@include until($tablet){
+				color: palette(black, 100);
+			}
 		}
 	}
 	.post-right{
+		// image
 		background-size: cover; 
 		background-position: center;
-		clip-path: ellipse(100% 175vh at 110% 0%);
+		@include until($tablet){
+			// height: 10rem;
+			// box-shadow: $default-box-shadow;
+			display: none;
+		}
+		@include from($tablet){
+			clip-path: ellipse(100% 175vh at 110% 0%);
+		}
 	}
 	&.reverse{
 		flex-direction: row-reverse;
 		.post-right{
-			clip-path: ellipse(100% 175vh at -10% 0%);		
+			@include from($tablet){
+				clip-path: ellipse(100% 175vh at -10% 0%);		
+			}
 		}
 	}
 	&:last-child{
