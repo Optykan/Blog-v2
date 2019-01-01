@@ -3,7 +3,26 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	height: calc(100vh - 7rem);
 	width: 100%;
 	text-align: center;
+}
+.header-wrapper{
+	position: fixed;
+	width: 100%;
+	padding-top: 2rem;
+	.component-logo{
+		position: absolute;
+		left: 1rem;
+	}
+	.home-button{
+		z-index:99;
+		position: absolute;
+		right: 2rem;
+	}
+}
+.footer{
+	position:fixed;
+	width: 100%;
+	bottom: 0;
 }
