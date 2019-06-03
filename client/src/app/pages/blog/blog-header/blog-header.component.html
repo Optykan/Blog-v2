@@ -4,20 +4,20 @@
 		<component-button link="/home" text="Home" class="home-button"></component-button>
 	</div>
 	<div class="columns hero-wrapper">
-		<div class="columns column is-6 blog-wrapper">
-			<div class="column is-2"></div>
-			<div class="column blog-header-content">
+		<div class="columns column is-12 blog-wrapper">
+			<div class="column is-1"></div>
+			<div class="column is-11 blog-header-content">
 				<h1 class="is-size-1 blog-title">{{message.left}}</h1>
 				<hr class="blog-separator"/>
 				<p class="blog-subheader">{{message.leftText}}</p>
 			</div>
 		</div>
-		<div class="columns column is-6 project-wrapper" (click)="switch()">
+		<!-- <div class="columns column is-6 project-wrapper" (click)="switch()">
 			<div class="column project-header-content">
 				<h4 class="project-title is-size-4">{{message.right}}</h4>
 				<p class="project-subheader">{{message.rightText}}</p>
 			</div>
 			<div class="column is-2"></div>
-		</div>
+		</div> -->
 	</div>
 </div>

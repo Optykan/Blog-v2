@@ -2,11 +2,23 @@
 
 .hero-text-component{
 	text-align: center;
+	@include flex-center;
+	flex-direction: column;
 	color: palette(black, 100);
 	.hero-text-separator {
 		@include white-separator;
 		width: 15rem;
 		margin-top: 0.5rem;
 		margin-bottom: 1rem;
-	}	
+	}
+	.action-row {
+		display: flex;
+		margin-top: 1rem;
+		> * {
+			margin-left: 1rem;
+			&:first-child{
+				margin-left: 0;
+			}
+		}
+	}
 }

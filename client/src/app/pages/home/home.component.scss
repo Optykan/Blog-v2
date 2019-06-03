@@ -6,6 +6,7 @@
 	background-position: left top;
 	height: 100vh;
 	position: relative;
+	// transition: all 0.01s linear;
 	@include gradient-dim();
 	@include flex-center;
 	#blog-button {

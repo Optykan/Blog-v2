@@ -10,7 +10,7 @@ const MESSAGES = {
 	PROJECTS_ACTIVE: {
 		left: "Projects",
 		right: "Explore Blog",
-		leftText: "Spaghetti code everywhere",
+		leftText: "This is some of the stuff that I've worked on or am working on, from just ideas to finished products.",
 		rightText: "The bumbling ravings of a madman"
 	},
 };
@@ -21,8 +21,8 @@ const MESSAGES = {
   styleUrls: ['./blog-header.component.scss']
 })
 export class BlogHeaderComponent implements OnInit {
-	blogIsActive: boolean = true;
-	message: Object = MESSAGES.BLOG_ACTIVE;
+	blogIsActive: boolean = false;
+	message: Object = MESSAGES.PROJECTS_ACTIVE;
 
   constructor() { }
 
@@ -33,6 +33,8 @@ export class BlogHeaderComponent implements OnInit {
   changeActive: EventEmitter<string> = new EventEmitter<string>();
 
   switch(){
+		return;
+		// no blog for now :(
   	this.blogIsActive = !this.blogIsActive;
   	if(this.blogIsActive){
   		this.message = MESSAGES.BLOG_ACTIVE;

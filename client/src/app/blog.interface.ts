@@ -2,7 +2,8 @@ export interface PostPreview {
 	title: string;
 	snippet: string;
 	image: string;
-	link: string;
+	link?: string;
+	code?: string;
 }
 
 export interface Post {

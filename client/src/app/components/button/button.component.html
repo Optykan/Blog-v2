@@ -1,4 +1,6 @@
-<button class="button is-info" [class.is-inverted]="isInverted" [class.is-outlined]="isOutlined" [class.is-rounded]="isRounded">
-	<a href="#" routerLink="{{link}}" *ngIf="link" class="link" (click)="click">{{text}}</a>
+<button class="button is-info" [ngClass]="[theme]" [class.is-inverted]="isInverted" [class.is-outlined]="isOutlined" [class.is-rounded]="isRounded">
+	<a href="{{link}}" *ngIf="isExternal" class="link" (click)="click" target="_blank">{{text}}</a>
+	<a href="{{link}}" *ngIf="link.includes('assets')" class="link" (click)="click">{{text}}</a>
+	<a href="#" routerLink="{{link}}" *ngIf="!isExternal && !link.includes('assets')" class="link" (click)="click">{{text}}</a>
 	<ng-content></ng-content>
 </button>

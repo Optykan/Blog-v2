@@ -39,10 +39,14 @@
 		// margin-left: 6rem;
 	}
 	.blog-subheader{
+		max-width: 50%;
 		// color: palette(primary, 500);
 	}
 	.blog-wrapper{
 		padding-left: 10rem;
+		@include until($tablet){
+			padding-left: 5rem;
+		}
 	}
 	.project-wrapper{
 		//it says project but I really meant right side

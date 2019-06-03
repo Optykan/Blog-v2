@@ -47,6 +47,9 @@
 			@include from($tablet){
 				padding: 5rem 0;
 			}
+			.read-more + .live {
+				margin-left: 1rem;
+			}
 		}
 		.post-snippet{
 			margin: 1rem 0;

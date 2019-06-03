@@ -8,11 +8,11 @@ import { Location } from '@angular/common';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
-  constructor(private router: Router, private location: Location) {
-
-  }
+  constructor(private router: Router, private location: Location) {}
+  isExternal: boolean = false;
 
   ngOnInit() {
+    this.isExternal = this.link.startsWith("http");
   }
 
   click(){
@@ -25,4 +25,5 @@ export class ButtonComponent implements OnInit {
   @Input() isInverted: boolean;
   @Input() isOutlined: boolean;
   @Input() isRounded: boolean;
+  @Input() theme: string = "";
 }

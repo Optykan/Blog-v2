@@ -47,7 +47,7 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
-    MarkdownModule.forRoot({ loader: HttpClientModule })
+    MarkdownModule.forRoot({ loader: HttpClientModule }),
   ],
   providers: [],
   bootstrap: [AppComponent]
