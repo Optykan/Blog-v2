@@ -44,7 +44,8 @@
 			background-image: none !important; 
 		}
 		@include until($tablet){
-			@include dim(0.5);
+			text-shadow: 2px 2px 2px palette(black, 900);
+			@include dim(0.7);
 		}
 		.post-content{
 			position: relative;
