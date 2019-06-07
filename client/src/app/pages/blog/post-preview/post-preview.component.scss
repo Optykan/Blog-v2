@@ -32,6 +32,12 @@
 			color: palette(black, 100);
 		}
 	}
+	.technologies {
+		text-transform: uppercase;
+		@include until($tablet){
+			color: palette(black, 100);
+		}
+	}
 	.post-left{
 		position: relative;
 		@include from($tablet){

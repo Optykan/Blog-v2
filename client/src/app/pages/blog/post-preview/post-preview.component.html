@@ -1,8 +1,9 @@
 <div class="columns post-preview is-gapless" [class.reverse]="reverse">
-	<div class="column is-5 post-left columns" style="background-image: url('https://picsum.photos/1000')">
+	<div class="column is-5 post-left columns" [style.background-image]="image">
 		<div class="column post-content" [ngClass]="{ 'is-offset-4': !reverse }">
 			<h1 class="post-number is-size-3">/{{paddedNumber}}.</h1>
 			<h3 class="post-title is-size-3">{{post.title}}.</h3>
+			<p class="technologies" *ngIf="post.technologies">{{post.technologies.join(", ")}}</p>
 			<p class="post-snippet">{{post.snippet}}</p>
 			<component-button class="read-more" *ngIf="post.link" link="{{post.link}}" text='View'></component-button>
 			<component-button class="live" *ngIf="post.code" link="{{post.code}}" text='Source Code' theme="is-success">
@@ -10,5 +11,5 @@
 		</div>
 		<div class="column is-4" *ngIf="reverse"></div>
 	</div>
-	<div class="column is-7 post-right" style="background-image: url('https://picsum.photos/1000')">&nbsp;</div>
+	<div class="column is-7 post-right" [style.background-image]="image">&nbsp;</div>
 </div>

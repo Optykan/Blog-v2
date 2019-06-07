@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PostPreview } from '../../../blog.interface';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'blog-post-preview',
@@ -11,14 +12,15 @@ export class PostPreviewComponent implements OnInit {
 	@Input() post: PostPreview;
   @Input() reverse: boolean = false;
   @Input() number: number;
+  image: any;
   
-  constructor() {
+  constructor(private sanitization: DomSanitizer) {
   	this.post = {
   		title: "test",
   		snippet: "Future site of great content",
       image: "http://picsum.photos/1000",
   		link: "link"
-  	}
+    }
   }
 
   get paddedNumber(){
@@ -26,6 +28,7 @@ export class PostPreviewComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.image = this.sanitization.bypassSecurityTrustStyle(`url(${this.post.image})`);
   }
 
 }

@@ -4,6 +4,7 @@ export interface PostPreview {
 	image: string;
 	link?: string;
 	code?: string;
+	technologies?: Array<string>;
 }
 
 export interface Post {
