@@ -66,8 +66,9 @@
 	}
 	.post-right{
 		// image
-		background-size: cover; 
-		background-position: center;
+		background-size: 90%; 
+		background-position: right top;
+		background-repeat: no-repeat;
 		@include until($tablet){
 			// height: 10rem;
 			// box-shadow: $default-box-shadow;
@@ -80,6 +81,7 @@
 	&.reverse{
 		flex-direction: row-reverse;
 		.post-right{
+			background-position: left top;
 			@include from($tablet){
 				clip-path: ellipse(100% 175vh at -10% 0%);		
 			}
