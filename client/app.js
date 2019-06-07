@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-var path = __dirname + '/public';
+var path = __dirname + '/dist/client';
 var port = 4000;
 
 app.use(express.static(path));
